@@ -11,8 +11,8 @@
 		D8ABEAC3263C42CC00B9D2B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEAC2263C42CC00B9D2B9 /* ContentView.swift */; };
 		D8ABEAC5263C42CD00B9D2B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8ABEAC4263C42CD00B9D2B9 /* Assets.xcassets */; };
 		D8ABEAC8263C42CD00B9D2B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8ABEAC7263C42CD00B9D2B9 /* Preview Assets.xcassets */; };
-		D8ABEAD4263C42CD00B9D2B9 /* Smart_FoldersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEAD3263C42CD00B9D2B9 /* Smart_FoldersTests.swift */; };
-		D8ABEADF263C42CD00B9D2B9 /* Smart_FoldersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEADE263C42CD00B9D2B9 /* Smart_FoldersUITests.swift */; };
+		D8ABEAD4263C42CD00B9D2B9 /* MultifolderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEAD3263C42CD00B9D2B9 /* MultifolderTests.swift */; };
+		D8ABEADF263C42CD00B9D2B9 /* MultifolderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEADE263C42CD00B9D2B9 /* MultifolderUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +41,10 @@
 		D8ABEAC9263C42CD00B9D2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8ABEACA263C42CD00B9D2B9 /* Multifolder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Multifolder.entitlements; sourceTree = "<group>"; };
 		D8ABEACF263C42CD00B9D2B9 /* MultifolderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultifolderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8ABEAD3263C42CD00B9D2B9 /* Smart_FoldersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_FoldersTests.swift; sourceTree = "<group>"; };
+		D8ABEAD3263C42CD00B9D2B9 /* MultifolderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultifolderTests.swift; sourceTree = "<group>"; };
 		D8ABEAD5263C42CD00B9D2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8ABEADA263C42CD00B9D2B9 /* MultifolderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultifolderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8ABEADE263C42CD00B9D2B9 /* Smart_FoldersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_FoldersUITests.swift; sourceTree = "<group>"; };
+		D8ABEADE263C42CD00B9D2B9 /* MultifolderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultifolderUITests.swift; sourceTree = "<group>"; };
 		D8ABEAE0263C42CD00B9D2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +117,7 @@
 		D8ABEAD2263C42CD00B9D2B9 /* MultifolderTests */ = {
 			isa = PBXGroup;
 			children = (
-				D8ABEAD3263C42CD00B9D2B9 /* Smart_FoldersTests.swift */,
+				D8ABEAD3263C42CD00B9D2B9 /* MultifolderTests.swift */,
 				D8ABEAD5263C42CD00B9D2B9 /* Info.plist */,
 			);
 			path = MultifolderTests;
@@ -126,7 +126,7 @@
 		D8ABEADD263C42CD00B9D2B9 /* MultifolderUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D8ABEADE263C42CD00B9D2B9 /* Smart_FoldersUITests.swift */,
+				D8ABEADE263C42CD00B9D2B9 /* MultifolderUITests.swift */,
 				D8ABEAE0263C42CD00B9D2B9 /* Info.plist */,
 			);
 			path = MultifolderUITests;
@@ -270,7 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8ABEAD4263C42CD00B9D2B9 /* Smart_FoldersTests.swift in Sources */,
+				D8ABEAD4263C42CD00B9D2B9 /* MultifolderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8ABEADF263C42CD00B9D2B9 /* Smart_FoldersUITests.swift in Sources */,
+				D8ABEADF263C42CD00B9D2B9 /* MultifolderUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
