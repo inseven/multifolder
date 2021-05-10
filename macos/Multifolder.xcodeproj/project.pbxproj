@@ -33,17 +33,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D8ABEABD263C42CC00B9D2B9 /* Smart Folders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Folders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8ABEABD263C42CC00B9D2B9 /* Multifolder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multifolder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ABEAC0263C42CC00B9D2B9 /* Smart_FoldersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_FoldersApp.swift; sourceTree = "<group>"; };
 		D8ABEAC2263C42CC00B9D2B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D8ABEAC4263C42CD00B9D2B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8ABEAC7263C42CD00B9D2B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D8ABEAC9263C42CD00B9D2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8ABEACA263C42CD00B9D2B9 /* Smart_Folders.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Smart_Folders.entitlements; sourceTree = "<group>"; };
-		D8ABEACF263C42CD00B9D2B9 /* Smart FoldersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart FoldersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8ABEACF263C42CD00B9D2B9 /* MultifolderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultifolderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ABEAD3263C42CD00B9D2B9 /* Smart_FoldersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_FoldersTests.swift; sourceTree = "<group>"; };
 		D8ABEAD5263C42CD00B9D2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8ABEADA263C42CD00B9D2B9 /* Smart FoldersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart FoldersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8ABEADA263C42CD00B9D2B9 /* MultifolderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultifolderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ABEADE263C42CD00B9D2B9 /* Smart_FoldersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_FoldersUITests.swift; sourceTree = "<group>"; };
 		D8ABEAE0263C42CD00B9D2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,9 +86,9 @@
 		D8ABEABE263C42CC00B9D2B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8ABEABD263C42CC00B9D2B9 /* Smart Folders.app */,
-				D8ABEACF263C42CD00B9D2B9 /* Smart FoldersTests.xctest */,
-				D8ABEADA263C42CD00B9D2B9 /* Smart FoldersUITests.xctest */,
+				D8ABEABD263C42CC00B9D2B9 /* Multifolder.app */,
+				D8ABEACF263C42CD00B9D2B9 /* MultifolderTests.xctest */,
+				D8ABEADA263C42CD00B9D2B9 /* MultifolderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,9 +135,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D8ABEABC263C42CC00B9D2B9 /* Smart Folders */ = {
+		D8ABEABC263C42CC00B9D2B9 /* Multifolder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8ABEAE3263C42CD00B9D2B9 /* Build configuration list for PBXNativeTarget "Smart Folders" */;
+			buildConfigurationList = D8ABEAE3263C42CD00B9D2B9 /* Build configuration list for PBXNativeTarget "Multifolder" */;
 			buildPhases = (
 				D8ABEAB9263C42CC00B9D2B9 /* Sources */,
 				D8ABEABA263C42CC00B9D2B9 /* Frameworks */,
@@ -147,14 +147,14 @@
 			);
 			dependencies = (
 			);
-			name = "Smart Folders";
+			name = Multifolder;
 			productName = "Smart Folders";
-			productReference = D8ABEABD263C42CC00B9D2B9 /* Smart Folders.app */;
+			productReference = D8ABEABD263C42CC00B9D2B9 /* Multifolder.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D8ABEACE263C42CD00B9D2B9 /* Smart FoldersTests */ = {
+		D8ABEACE263C42CD00B9D2B9 /* MultifolderTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8ABEAE6263C42CD00B9D2B9 /* Build configuration list for PBXNativeTarget "Smart FoldersTests" */;
+			buildConfigurationList = D8ABEAE6263C42CD00B9D2B9 /* Build configuration list for PBXNativeTarget "MultifolderTests" */;
 			buildPhases = (
 				D8ABEACB263C42CD00B9D2B9 /* Sources */,
 				D8ABEACC263C42CD00B9D2B9 /* Frameworks */,
@@ -165,14 +165,14 @@
 			dependencies = (
 				D8ABEAD1263C42CD00B9D2B9 /* PBXTargetDependency */,
 			);
-			name = "Smart FoldersTests";
+			name = MultifolderTests;
 			productName = "Smart FoldersTests";
-			productReference = D8ABEACF263C42CD00B9D2B9 /* Smart FoldersTests.xctest */;
+			productReference = D8ABEACF263C42CD00B9D2B9 /* MultifolderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D8ABEAD9263C42CD00B9D2B9 /* Smart FoldersUITests */ = {
+		D8ABEAD9263C42CD00B9D2B9 /* MultifolderUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8ABEAE9263C42CD00B9D2B9 /* Build configuration list for PBXNativeTarget "Smart FoldersUITests" */;
+			buildConfigurationList = D8ABEAE9263C42CD00B9D2B9 /* Build configuration list for PBXNativeTarget "MultifolderUITests" */;
 			buildPhases = (
 				D8ABEAD6263C42CD00B9D2B9 /* Sources */,
 				D8ABEAD7263C42CD00B9D2B9 /* Frameworks */,
@@ -183,9 +183,9 @@
 			dependencies = (
 				D8ABEADC263C42CD00B9D2B9 /* PBXTargetDependency */,
 			);
-			name = "Smart FoldersUITests";
+			name = MultifolderUITests;
 			productName = "Smart FoldersUITests";
-			productReference = D8ABEADA263C42CD00B9D2B9 /* Smart FoldersUITests.xctest */;
+			productReference = D8ABEADA263C42CD00B9D2B9 /* MultifolderUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D8ABEAB8263C42CC00B9D2B9 /* Build configuration list for PBXProject "Smart Folders" */;
+			buildConfigurationList = D8ABEAB8263C42CC00B9D2B9 /* Build configuration list for PBXProject "Multifolder" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -223,9 +223,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D8ABEABC263C42CC00B9D2B9 /* Smart Folders */,
-				D8ABEACE263C42CD00B9D2B9 /* Smart FoldersTests */,
-				D8ABEAD9263C42CD00B9D2B9 /* Smart FoldersUITests */,
+				D8ABEABC263C42CC00B9D2B9 /* Multifolder */,
+				D8ABEACE263C42CD00B9D2B9 /* MultifolderTests */,
+				D8ABEAD9263C42CD00B9D2B9 /* MultifolderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -287,12 +287,12 @@
 /* Begin PBXTargetDependency section */
 		D8ABEAD1263C42CD00B9D2B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D8ABEABC263C42CC00B9D2B9 /* Smart Folders */;
+			target = D8ABEABC263C42CC00B9D2B9 /* Multifolder */;
 			targetProxy = D8ABEAD0263C42CD00B9D2B9 /* PBXContainerItemProxy */;
 		};
 		D8ABEADC263C42CD00B9D2B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D8ABEABC263C42CC00B9D2B9 /* Smart Folders */;
+			target = D8ABEABC263C42CC00B9D2B9 /* Multifolder */;
 			targetProxy = D8ABEADB263C42CD00B9D2B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -479,7 +479,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.inseven.Smart-FoldersTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Folders.app/Contents/MacOS/Smart Folders";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multifolder.app/Contents/MacOS/Multifolder";
 			};
 			name = Debug;
 		};
@@ -501,7 +501,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.inseven.Smart-FoldersTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Folders.app/Contents/MacOS/Smart Folders";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multifolder.app/Contents/MacOS/Multifolder";
 			};
 			name = Release;
 		};
@@ -548,7 +548,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D8ABEAB8263C42CC00B9D2B9 /* Build configuration list for PBXProject "Smart Folders" */ = {
+		D8ABEAB8263C42CC00B9D2B9 /* Build configuration list for PBXProject "Multifolder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8ABEAE1263C42CD00B9D2B9 /* Debug */,
@@ -557,7 +557,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8ABEAE3263C42CD00B9D2B9 /* Build configuration list for PBXNativeTarget "Smart Folders" */ = {
+		D8ABEAE3263C42CD00B9D2B9 /* Build configuration list for PBXNativeTarget "Multifolder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8ABEAE4263C42CD00B9D2B9 /* Debug */,
@@ -566,7 +566,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8ABEAE6263C42CD00B9D2B9 /* Build configuration list for PBXNativeTarget "Smart FoldersTests" */ = {
+		D8ABEAE6263C42CD00B9D2B9 /* Build configuration list for PBXNativeTarget "MultifolderTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8ABEAE7263C42CD00B9D2B9 /* Debug */,
@@ -575,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8ABEAE9263C42CD00B9D2B9 /* Build configuration list for PBXNativeTarget "Smart FoldersUITests" */ = {
+		D8ABEAE9263C42CD00B9D2B9 /* Build configuration list for PBXNativeTarget "MultifolderUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8ABEAEA263C42CD00B9D2B9 /* Debug */,
