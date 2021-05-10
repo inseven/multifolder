@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Smart_Folders
+@testable import Multifolder
 
 class Smart_FoldersTests: XCTestCase {
 

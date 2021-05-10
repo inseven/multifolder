@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D8ABEAC1263C42CC00B9D2B9 /* Smart_FoldersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEAC0263C42CC00B9D2B9 /* Smart_FoldersApp.swift */; };
+		D8ABEAC1263C42CC00B9D2B9 /* MultifolderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEAC0263C42CC00B9D2B9 /* MultifolderApp.swift */; };
 		D8ABEAC3263C42CC00B9D2B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEAC2263C42CC00B9D2B9 /* ContentView.swift */; };
 		D8ABEAC5263C42CD00B9D2B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8ABEAC4263C42CD00B9D2B9 /* Assets.xcassets */; };
 		D8ABEAC8263C42CD00B9D2B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8ABEAC7263C42CD00B9D2B9 /* Preview Assets.xcassets */; };
@@ -34,12 +34,12 @@
 
 /* Begin PBXFileReference section */
 		D8ABEABD263C42CC00B9D2B9 /* Multifolder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multifolder.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8ABEAC0263C42CC00B9D2B9 /* Smart_FoldersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_FoldersApp.swift; sourceTree = "<group>"; };
+		D8ABEAC0263C42CC00B9D2B9 /* MultifolderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultifolderApp.swift; sourceTree = "<group>"; };
 		D8ABEAC2263C42CC00B9D2B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D8ABEAC4263C42CD00B9D2B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8ABEAC7263C42CD00B9D2B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D8ABEAC9263C42CD00B9D2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8ABEACA263C42CD00B9D2B9 /* Smart_Folders.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Smart_Folders.entitlements; sourceTree = "<group>"; };
+		D8ABEACA263C42CD00B9D2B9 /* Multifolder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Multifolder.entitlements; sourceTree = "<group>"; };
 		D8ABEACF263C42CD00B9D2B9 /* MultifolderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultifolderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ABEAD3263C42CD00B9D2B9 /* Smart_FoldersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_FoldersTests.swift; sourceTree = "<group>"; };
 		D8ABEAD5263C42CD00B9D2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		D8ABEAB4263C42CC00B9D2B9 = {
 			isa = PBXGroup;
 			children = (
-				D8ABEABF263C42CC00B9D2B9 /* Smart Folders */,
+				D8ABEABF263C42CC00B9D2B9 /* Multifolder */,
 				D8ABEAD2263C42CD00B9D2B9 /* Smart FoldersTests */,
 				D8ABEADD263C42CD00B9D2B9 /* Smart FoldersUITests */,
 				D8ABEABE263C42CC00B9D2B9 /* Products */,
@@ -93,17 +93,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D8ABEABF263C42CC00B9D2B9 /* Smart Folders */ = {
+		D8ABEABF263C42CC00B9D2B9 /* Multifolder */ = {
 			isa = PBXGroup;
 			children = (
-				D8ABEAC0263C42CC00B9D2B9 /* Smart_FoldersApp.swift */,
+				D8ABEAC0263C42CC00B9D2B9 /* MultifolderApp.swift */,
 				D8ABEAC2263C42CC00B9D2B9 /* ContentView.swift */,
 				D8ABEAC4263C42CD00B9D2B9 /* Assets.xcassets */,
 				D8ABEAC9263C42CD00B9D2B9 /* Info.plist */,
-				D8ABEACA263C42CD00B9D2B9 /* Smart_Folders.entitlements */,
+				D8ABEACA263C42CD00B9D2B9 /* Multifolder.entitlements */,
 				D8ABEAC6263C42CD00B9D2B9 /* Preview Content */,
 			);
-			path = "Smart Folders";
+			path = Multifolder;
 			sourceTree = "<group>";
 		};
 		D8ABEAC6263C42CD00B9D2B9 /* Preview Content */ = {
@@ -262,7 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8ABEAC3263C42CC00B9D2B9 /* ContentView.swift in Sources */,
-				D8ABEAC1263C42CC00B9D2B9 /* Smart_FoldersApp.swift in Sources */,
+				D8ABEAC1263C42CC00B9D2B9 /* MultifolderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,14 +418,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Smart Folders/Smart_Folders.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Multifolder/Multifolder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Smart Folders/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Multifolder/Preview Content\"";
 				DEVELOPMENT_TEAM = S4WXAUZQEV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Smart Folders/Info.plist";
+				INFOPLIST_FILE = Multifolder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -442,14 +442,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Smart Folders/Smart_Folders.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Multifolder/Multifolder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Smart Folders/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Multifolder/Preview Content\"";
 				DEVELOPMENT_TEAM = S4WXAUZQEV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Smart Folders/Info.plist";
+				INFOPLIST_FILE = Multifolder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

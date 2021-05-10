@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Smart_FoldersApp: App {
+struct MultifolderApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
