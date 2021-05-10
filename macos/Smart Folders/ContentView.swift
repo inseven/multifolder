@@ -68,7 +68,6 @@ struct ContentView: View {
             print("Invalid format")
             return
         }
-        print(arrayOfPaths)
         self.contents = contents
         self.paths = arrayOfPaths.map { path in
             URL(fileURLWithPath: path)
@@ -105,14 +104,12 @@ struct ContentView: View {
                     contents["SearchCriteria"] = searchCritera
                     let dictionary = contents as NSDictionary
                     dictionary.write(toFile: folder, atomically: true)
-                    print(contents)
 
                     do {
                         try FileManager.default.setAttributes([.extensionHidden: true], ofItemAtPath: folder)
                     } catch {
                         print(error)
                     }
-
 
                     // Unfortunately we have to relaunch the Finder to ensure it re-reads the smart folder 😢
                     relaunchFinder()
