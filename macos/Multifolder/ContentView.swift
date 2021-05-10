@@ -21,6 +21,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
+import Interact
 
 extension String: Identifiable {
     public var id: String { self }
@@ -92,16 +93,19 @@ struct ContentView: View {
             TextField("Folder Path", text: $folder)
             List(selection: $selection) {
                 ForEach(paths) { link in
-                    Text(link.path)
-                        .contextMenu {
-                            Button("Remove") {
-                                if selection.contains(link) {
-                                    paths.removeAll { selection.contains($0) }
-                                } else {
-                                    paths.removeAll { $0 == link }
-                                }
+                    HStack {
+                        IconView(url: link, size: CGSize(width: 16, height: 16))
+                        Text(link.path)
+                    }
+                    .contextMenu {
+                        Button("Remove") {
+                            if selection.contains(link) {
+                                paths.removeAll { selection.contains($0) }
+                            } else {
+                                paths.removeAll { $0 == link }
                             }
                         }
+                    }
                 }
             }
             .onDrop(of: [.fileURL], delegate: FileDropDelegate(files: $paths))

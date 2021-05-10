@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D884467C2649F9E200843013 /* Interact in Frameworks */ = {isa = PBXBuildFile; productRef = D884467B2649F9E200843013 /* Interact */; };
 		D8ABEAC1263C42CC00B9D2B9 /* MultifolderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEAC0263C42CC00B9D2B9 /* MultifolderApp.swift */; };
 		D8ABEAC3263C42CC00B9D2B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEAC2263C42CC00B9D2B9 /* ContentView.swift */; };
 		D8ABEAC5263C42CD00B9D2B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8ABEAC4263C42CD00B9D2B9 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D88446792649F8C700843013 /* interact */ = {isa = PBXFileReference; lastKnownFileType = folder; name = interact; path = ../interact; sourceTree = "<group>"; };
 		D8ABEABD263C42CC00B9D2B9 /* Multifolder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multifolder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ABEAC0263C42CC00B9D2B9 /* MultifolderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultifolderApp.swift; sourceTree = "<group>"; };
 		D8ABEAC2263C42CC00B9D2B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D884467C2649F9E200843013 /* Interact in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,13 +76,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D884467A2649F9E200843013 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8ABEAB4263C42CC00B9D2B9 = {
 			isa = PBXGroup;
 			children = (
+				D88446792649F8C700843013 /* interact */,
 				D8ABEABF263C42CC00B9D2B9 /* Multifolder */,
 				D8ABEAD2263C42CD00B9D2B9 /* MultifolderTests */,
 				D8ABEADD263C42CD00B9D2B9 /* MultifolderUITests */,
 				D8ABEABE263C42CC00B9D2B9 /* Products */,
+				D884467A2649F9E200843013 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +160,9 @@
 			dependencies = (
 			);
 			name = Multifolder;
+			packageProductDependencies = (
+				D884467B2649F9E200843013 /* Interact */,
+			);
 			productName = "Smart Folders";
 			productReference = D8ABEABD263C42CC00B9D2B9 /* Multifolder.app */;
 			productType = "com.apple.product-type.application";
@@ -585,6 +600,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D884467B2649F9E200843013 /* Interact */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Interact;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D8ABEAB5263C42CC00B9D2B9 /* Project object */;
 }
