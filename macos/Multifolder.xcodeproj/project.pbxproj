@@ -77,8 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				D8ABEABF263C42CC00B9D2B9 /* Multifolder */,
-				D8ABEAD2263C42CD00B9D2B9 /* Smart FoldersTests */,
-				D8ABEADD263C42CD00B9D2B9 /* Smart FoldersUITests */,
+				D8ABEAD2263C42CD00B9D2B9 /* MultifolderTests */,
+				D8ABEADD263C42CD00B9D2B9 /* MultifolderUITests */,
 				D8ABEABE263C42CC00B9D2B9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,22 +114,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D8ABEAD2263C42CD00B9D2B9 /* Smart FoldersTests */ = {
+		D8ABEAD2263C42CD00B9D2B9 /* MultifolderTests */ = {
 			isa = PBXGroup;
 			children = (
 				D8ABEAD3263C42CD00B9D2B9 /* Smart_FoldersTests.swift */,
 				D8ABEAD5263C42CD00B9D2B9 /* Info.plist */,
 			);
-			path = "Smart FoldersTests";
+			path = MultifolderTests;
 			sourceTree = "<group>";
 		};
-		D8ABEADD263C42CD00B9D2B9 /* Smart FoldersUITests */ = {
+		D8ABEADD263C42CD00B9D2B9 /* MultifolderUITests */ = {
 			isa = PBXGroup;
 			children = (
 				D8ABEADE263C42CD00B9D2B9 /* Smart_FoldersUITests.swift */,
 				D8ABEAE0263C42CD00B9D2B9 /* Info.plist */,
 			);
-			path = "Smart FoldersUITests";
+			path = MultifolderUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,7 +431,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.inseven.Smart-Folders";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.inseven.multifolder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -455,7 +455,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.inseven.Smart-Folders";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.inseven.multifolder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -469,14 +469,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S4WXAUZQEV;
-				INFOPLIST_FILE = "Smart FoldersTests/Info.plist";
+				INFOPLIST_FILE = MultifolderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.inseven.Smart-FoldersTests";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.inseven.MultifolderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multifolder.app/Contents/MacOS/Multifolder";
@@ -491,14 +491,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S4WXAUZQEV;
-				INFOPLIST_FILE = "Smart FoldersTests/Info.plist";
+				INFOPLIST_FILE = MultifolderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.inseven.Smart-FoldersTests";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.inseven.MultifolderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multifolder.app/Contents/MacOS/Multifolder";
@@ -512,16 +512,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S4WXAUZQEV;
-				INFOPLIST_FILE = "Smart FoldersUITests/Info.plist";
+				INFOPLIST_FILE = MultifolderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.inseven.Smart-FoldersUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.inseven.MultifolderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "Smart Folders";
+				TEST_TARGET_NAME = Multifolder;
 			};
 			name = Debug;
 		};
@@ -532,16 +532,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S4WXAUZQEV;
-				INFOPLIST_FILE = "Smart FoldersUITests/Info.plist";
+				INFOPLIST_FILE = MultifolderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.inseven.Smart-FoldersUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.inseven.MultifolderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "Smart Folders";
+				TEST_TARGET_NAME = Multifolder;
 			};
 			name = Release;
 		};
