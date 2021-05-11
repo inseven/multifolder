@@ -10,8 +10,9 @@
 		D884467C2649F9E200843013 /* Interact in Frameworks */ = {isa = PBXBuildFile; productRef = D884467B2649F9E200843013 /* Interact */; };
 		D89501F7264A001A00A99E64 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89501F6264A001A00A99E64 /* URL.swift */; };
 		D89501FA264A013600A99E64 /* FileDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89501F9264A013600A99E64 /* FileDropDelegate.swift */; };
+		D89501FC264A290100A99E64 /* SmartFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89501FB264A290100A99E64 /* SmartFolderView.swift */; };
+		D89501FE264A30D700A99E64 /* SmartFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89501FD264A30D700A99E64 /* SmartFolder.swift */; };
 		D8ABEAC1263C42CC00B9D2B9 /* MultifolderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEAC0263C42CC00B9D2B9 /* MultifolderApp.swift */; };
-		D8ABEAC3263C42CC00B9D2B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEAC2263C42CC00B9D2B9 /* ContentView.swift */; };
 		D8ABEAC5263C42CD00B9D2B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8ABEAC4263C42CD00B9D2B9 /* Assets.xcassets */; };
 		D8ABEAC8263C42CD00B9D2B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8ABEAC7263C42CD00B9D2B9 /* Preview Assets.xcassets */; };
 		D8ABEAD4263C42CD00B9D2B9 /* MultifolderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEAD3263C42CD00B9D2B9 /* MultifolderTests.swift */; };
@@ -39,9 +40,10 @@
 		D88446792649F8C700843013 /* interact */ = {isa = PBXFileReference; lastKnownFileType = folder; name = interact; path = ../interact; sourceTree = "<group>"; };
 		D89501F6264A001A00A99E64 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		D89501F9264A013600A99E64 /* FileDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDropDelegate.swift; sourceTree = "<group>"; };
+		D89501FB264A290100A99E64 /* SmartFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFolderView.swift; sourceTree = "<group>"; };
+		D89501FD264A30D700A99E64 /* SmartFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartFolder.swift; sourceTree = "<group>"; };
 		D8ABEABD263C42CC00B9D2B9 /* Multifolder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multifolder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ABEAC0263C42CC00B9D2B9 /* MultifolderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultifolderApp.swift; sourceTree = "<group>"; };
-		D8ABEAC2263C42CC00B9D2B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D8ABEAC4263C42CD00B9D2B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8ABEAC7263C42CD00B9D2B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D8ABEAC9263C42CD00B9D2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,9 +135,10 @@
 				D89501F8264A011400A99E64 /* Utilities */,
 				D8ABEACA263C42CD00B9D2B9 /* Multifolder.entitlements */,
 				D8ABEAC9263C42CD00B9D2B9 /* Info.plist */,
-				D8ABEAC2263C42CC00B9D2B9 /* ContentView.swift */,
 				D8ABEAC0263C42CC00B9D2B9 /* MultifolderApp.swift */,
+				D89501FB264A290100A99E64 /* SmartFolderView.swift */,
 				D8ABEAC4263C42CD00B9D2B9 /* Assets.xcassets */,
+				D89501FD264A30D700A99E64 /* SmartFolder.swift */,
 			);
 			path = Multifolder;
 			sourceTree = "<group>";
@@ -298,7 +301,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8ABEAC3263C42CC00B9D2B9 /* ContentView.swift in Sources */,
+				D89501FE264A30D700A99E64 /* SmartFolder.swift in Sources */,
+				D89501FC264A290100A99E64 /* SmartFolderView.swift in Sources */,
 				D89501FA264A013600A99E64 /* FileDropDelegate.swift in Sources */,
 				D8ABEAC1263C42CC00B9D2B9 /* MultifolderApp.swift in Sources */,
 				D89501F7264A001A00A99E64 /* URL.swift in Sources */,

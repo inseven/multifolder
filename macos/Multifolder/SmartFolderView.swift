@@ -23,15 +23,10 @@ import UniformTypeIdentifiers
 
 import Interact
 
-extension String: Identifiable {
-    public var id: String { self }
-}
+struct SmartFolderView: View {
 
-struct ContentView: View {
+    @Binding var folder: SmartFolder
 
-    @State var contents: [String: Any]?
-    @State var folder = ""
-    @State var paths: [URL] = []
     @State var selection: Set<URL> = Set()
 
     func relaunchFinder() {
@@ -50,27 +45,10 @@ struct ContentView: View {
         }
     }
 
-    func load(path: String) {
-        guard let contents = NSDictionary(contentsOfFile: path) as? [String: Any] else {
-            print("Failed to load dictionary")
-            return
-        }
-        guard let searchCritera = contents["SearchCriteria"] as? [String: Any],
-              let arrayOfPaths = searchCritera["FXScopeArrayOfPaths"] as? [String] else {
-            print("Invalid format")
-            return
-        }
-        self.contents = contents
-        self.paths = arrayOfPaths.map { path in
-            URL(fileURLWithPath: path)
-        }
-    }
-
     var body: some View {
         VStack {
-            TextField("Folder Path", text: $folder)
             List(selection: $selection) {
-                ForEach(paths) { link in
+                ForEach(folder.paths) { link in
                     HStack {
                         IconView(url: link, size: CGSize(width: 16, height: 16))
                         Text(link.lastPathComponent)
@@ -78,43 +56,15 @@ struct ContentView: View {
                     .contextMenu {
                         Button("Remove") {
                             if selection.contains(link) {
-                                paths.removeAll { selection.contains($0) }
+                                folder.paths.removeAll { selection.contains($0) }
                             } else {
-                                paths.removeAll { $0 == link }
+                                folder.paths.removeAll { $0 == link }
                             }
                         }
                     }
                 }
             }
-            .onDrop(of: [.fileURL], delegate: FileDropDelegate(files: $paths))
-            HStack {
-                Button("Save") {
-                    guard var contents = contents else {
-                        return
-                    }
-                    guard var searchCritera = contents["SearchCriteria"] as? [String: Any] else {
-                        return
-                    }
-                    searchCritera["FXScopeArrayOfPaths"] = paths.map { $0.path }
-                    contents["SearchCriteria"] = searchCritera
-                    let dictionary = contents as NSDictionary
-                    dictionary.write(toFile: folder, atomically: true)
-
-                    do {
-                        try FileManager.default.setAttributes([.extensionHidden: true], ofItemAtPath: folder)
-                    } catch {
-                        print(error)
-                    }
-
-                    // Unfortunately we have to relaunch the Finder to ensure it re-reads the smart folder 😢
-                    relaunchFinder()
-                }
-                .disabled(contents == nil)
-            }
-            .onChange(of: folder) { folder in
-                load(path: folder)
-            }
+            .onDrop(of: [.fileURL], delegate: FileDropDelegate(files: $folder.paths))
         }
-        .padding()
     }
 }

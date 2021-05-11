@@ -19,12 +19,15 @@
 // SOFTWARE.
 
 import SwiftUI
+import UniformTypeIdentifiers
+
 
 @main
 struct MultifolderApp: App {
+
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        DocumentGroup(newDocument: SmartFolder()) { file in
+            SmartFolderView(folder: file.$document)
         }
     }
 }
