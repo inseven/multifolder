@@ -32,7 +32,6 @@ struct ContentView: View {
     @State var contents: [String: Any]?
     @State var folder = ""
     @State var paths: [URL] = []
-    @State var targeted = true
     @State var selection: Set<URL> = Set()
 
     func relaunchFinder() {
