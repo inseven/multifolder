@@ -27,10 +27,6 @@ extension String: Identifiable {
     public var id: String { self }
 }
 
-extension URL: Identifiable {
-    public var id: URL { self }
-}
-
 struct ContentView: View {
 
     @State var contents: [String: Any]?
