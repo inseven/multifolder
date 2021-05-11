@@ -21,6 +21,26 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
+class CallbackFileWrapper: FileWrapper {
+
+    var callback: () -> Void = {}
+
+    init(regularFileWithContents contents: Data, callback: @escaping () -> Void) {
+        super.init(regularFileWithContents: contents)
+        self.callback = callback
+    }
+
+    required init?(coder inCoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func write(to url: URL, options: FileWrapper.WritingOptions = [], originalContentsURL: URL?) throws {
+        try super.write(to: url, options: options, originalContentsURL: originalContentsURL)
+        callback()
+    }
+
+}
+
 class SmartFolder: FileDocument, ObservableObject {
 
     static var readableContentTypes: [UTType] = [UTType(filenameExtension: "savedSearch")!]
@@ -59,7 +79,11 @@ class SmartFolder: FileDocument, ObservableObject {
         contents["SearchCriteria"] = searchCritera
         let dictionary = contents as NSDictionary
         let data = try PropertyListSerialization.data(fromPropertyList: dictionary, format: .binary, options: 0)
-        return FileWrapper(regularFileWithContents: data)
+        return CallbackFileWrapper(regularFileWithContents: data) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                Finder.shared.relaunch()
+            }
+        }
     }
 
 }

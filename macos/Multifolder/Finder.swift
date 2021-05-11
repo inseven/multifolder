@@ -18,23 +18,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import SwiftUI
-import UniformTypeIdentifiers
+import Foundation
 
+class Finder {
 
-@main
-struct MultifolderApp: App {
+    static var shared = Finder()
 
-    var body: some Scene {
-        DocumentGroup(newDocument: SmartFolder()) { file in
-            SmartFolderView(folder: file.$document)
+    func relaunch() {
+        let script = """
+        tell application \"Finder\" to quit
+        tell application \"Finder\" to activate
+        """
+        guard let appleScript = NSAppleScript(source: script) else {
+            print("Failed to create script")
+            return
         }
-        .commands {
-            CommandMenu("Special") {
-                Button("Relaunch Finder...") {
-                    Finder.shared.relaunch()
-                }
-            }
+        var errorInfo: NSDictionary? = nil
+        appleScript.executeAndReturnError(&errorInfo)
+        if let error = errorInfo {
+            // TODO: Throw
+            print(error)
         }
     }
+
 }

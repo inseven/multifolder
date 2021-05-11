@@ -29,22 +29,6 @@ struct SmartFolderView: View {
 
     @State var selection: Set<URL> = Set()
 
-    func relaunchFinder() {
-        let script = """
-        tell application \"Finder\" to quit
-        tell application \"Finder\" to activate
-        """
-        guard let appleScript = NSAppleScript(source: script) else {
-            print("Failed to create script")
-            return
-        }
-        var errorInfo: NSDictionary? = nil
-        appleScript.executeAndReturnError(&errorInfo)
-        if let error = errorInfo {
-            print(error)
-        }
-    }
-
     var body: some View {
         VStack {
             List(selection: $selection) {
