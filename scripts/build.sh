@@ -117,7 +117,7 @@ function cleanup {
 trap cleanup EXIT
 
 # Determine the version and build number.
-VERSION_NUMBER=`"$CHANGES_SCRIPT" --scope macOS current-version`
+VERSION_NUMBER=`"$CHANGES_SCRIPT" current-version`
 GIT_COMMIT=`git rev-parse --short HEAD`
 TIMESTAMP=`date +%s`
 BUILD_NUMBER="${GIT_COMMIT}.${TIMESTAMP}"
@@ -154,5 +154,5 @@ popd
 if $RELEASE || $TRY_RELEASE ; then
     # List the current tags just to check GitHub has them.
     git tag
-    "$CHANGES_SCRIPT" --scope macOS release --skip-if-empty --push --command 'scripts/release.sh'
+    "$CHANGES_SCRIPT" release --skip-if-empty --push --command 'scripts/release.sh'
 fi
