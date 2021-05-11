@@ -31,23 +31,6 @@ extension URL: Identifiable {
     public var id: URL { self }
 }
 
-struct FileDropDelegate: DropDelegate {
-    @Binding var files: [URL]
-
-    func performDrop(info: DropInfo) -> Bool {
-        for item in info.itemProviders(for: [.fileURL]) {
-            _ = item.loadObject(ofClass: URL.self) { url, _ in
-                if let url = url {
-                    DispatchQueue.main.async {
-                        self.files.insert(url, at: 0)
-                    }
-                }
-            }
-        }
-        return true
-    }
-}
-
 struct ContentView: View {
 
     @State var contents: [String: Any]?
