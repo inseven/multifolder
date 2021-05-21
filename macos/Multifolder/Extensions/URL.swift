@@ -22,10 +22,8 @@ import Foundation
 
 extension URL {
 
-    var lastPathComponent: String {
-        get {
-            (absoluteString as NSString).lastPathComponent
-        }
+    var displayName: String {
+        FileManager.default.displayName(atPath: self.path)
     }
 
 }
