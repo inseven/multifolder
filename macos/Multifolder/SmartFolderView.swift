@@ -35,7 +35,7 @@ struct SmartFolderView: View {
                 ForEach(folder.paths) { link in
                     HStack {
                         IconView(url: link, size: CGSize(width: 16, height: 16))
-                        Text(link.lastPathComponent)
+                        Text(link.displayName)
                     }
                     .contextMenu {
                         Button("Remove") {
