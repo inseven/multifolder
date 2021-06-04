@@ -117,7 +117,7 @@ function cleanup {
 trap cleanup EXIT
 
 # Determine the version and build number.
-VERSION_NUMBER=`"$CHANGES_SCRIPT" current-version`
+VERSION_NUMBER=`"$CHANGES_SCRIPT" version`
 GIT_COMMIT=`git rev-parse --short HEAD`
 TIMESTAMP=`date +%s`
 BUILD_NUMBER="${GIT_COMMIT}.${TIMESTAMP}"
