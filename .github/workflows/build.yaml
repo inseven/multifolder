@@ -24,7 +24,8 @@ jobs:
         fetch-depth: 0
 
     - name: Install Pipenv
-      uses: dschep/install-pipenv-action@v1
+      run: |
+        sudo pip3 install pipenv
 
     - name: Install dependencies
       run: scripts/install-dependencies.sh
