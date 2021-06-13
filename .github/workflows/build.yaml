@@ -23,6 +23,10 @@ jobs:
         submodules: recursive
         fetch-depth: 0
 
+    - name: Trust the GitHub SSH keys
+      run: |
+        for ip in $(dig @8.8.8.8 github.com +short); do ssh-keyscan github.com,$ip; ssh-keyscan $ip; done 2>/dev/null >> ~/.ssh/known_hosts
+
     - name: Install Pipenv
       run: |
         sudo pip3 install pipenv
@@ -30,20 +34,16 @@ jobs:
     - name: Install dependencies
       run: scripts/install-dependencies.sh
 
-    - name: Trust the GitHub SSH keys
-      run: |
-        for ip in $(dig @8.8.8.8 github.com +short); do ssh-keyscan github.com,$ip; ssh-keyscan $ip; done 2>/dev/null >> ~/.ssh/known_hosts
-
     - name: Build and test
       env:
         TEMPORARY_KEYCHAIN_PASSWORD: ${{ secrets.TEMPORARY_KEYCHAIN_PASSWORD }}
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
         CERTIFICATE_REPOSITORY: ${{ secrets.CERTIFICATE_REPOSITORY }}
         CERTIFICATE_REPOSITORY_AUTHORIZATION_KEY: ${{ secrets.CERTIFICATE_REPOSITORY_AUTHORIZATION_KEY }}
-        APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
         APPLE_DEVELOPER_ID: ${{ secrets.APPLE_DEVELOPER_ID }}
         FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NOTARIZE: ${{ github.ref == 'refs/heads/main' }}
         TRY_RELEASE: ${{ github.ref == 'refs/heads/main' }}
       run: scripts/build.sh
 
