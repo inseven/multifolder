@@ -163,7 +163,7 @@ zip -r "Artifacts.zip" "."
 popd
 
 # Attempt to create a version tag and publish a GitHub release; fails quietly if there's no new release.
-if $RELEASE || $TRY_RELEASE ; then
+if $RELEASE ; then
     changes \
         release \
         --skip-if-empty \
