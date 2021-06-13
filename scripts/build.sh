@@ -36,8 +36,13 @@ KEYCHAIN_PATH="${TEMPORARY_DIRECTORY}/temporary.keychain"
 ARCHIVE_PATH="${BUILD_DIRECTORY}/Multifolder.xcarchive"
 FASTLANE_ENV_PATH="${ROOT_DIRECTORY}/fastlane/.env"
 
-CHANGES_SCRIPT="${SCRIPTS_DIRECTORY}/changes/changes"
-BUILD_TOOLS_SCRIPT="${SCRIPTS_DIRECTORY}/build-tools/build-tools"
+CHANGES_DIRECTORY="${SCRIPTS_DIRECTORY}/changes"
+BUILD_TOOLS_DIRECTORY="${SCRIPTS_DIRECTORY}/build-tools"
+
+CHANGES_GITHUB_RELEASE_SCRIPT="${CHANGES_DIRECTORY}/examples/gh-release.sh"
+
+PATH=$PATH:$CHANGES_DIRECTORY
+PATH=$PATH:$BUILD_TOOLS_DIRECTORY
 
 # Process the command line arguments.
 POSITIONAL=()
@@ -105,19 +110,19 @@ if [ -d "$TEMPORARY_DIRECTORY" ] ; then
     rm -rf "$TEMPORARY_DIRECTORY"
 fi
 mkdir -p "$TEMPORARY_DIRECTORY"
-echo "$TEMPORARY_KEYCHAIN_PASSWORD" | "$BUILD_TOOLS_SCRIPT" create-keychain "$KEYCHAIN_PATH" --password
+echo "$TEMPORARY_KEYCHAIN_PASSWORD" | build-tools create-keychain "$KEYCHAIN_PATH" --password
 
 function cleanup {
     # Cleanup the temporary files and keychain.
     cd "$ROOT_DIRECTORY"
-    "$BUILD_TOOLS_SCRIPT" delete-keychain "$KEYCHAIN_PATH"
+    build-tools delete-keychain "$KEYCHAIN_PATH"
     rm -rf "$TEMPORARY_DIRECTORY"
 }
 
 trap cleanup EXIT
 
 # Determine the version and build number.
-VERSION_NUMBER=`"$CHANGES_SCRIPT" version`
+VERSION_NUMBER=`changes version`
 GIT_COMMIT=`git rev-parse --short HEAD`
 TIMESTAMP=`date +%s`
 BUILD_NUMBER="${GIT_COMMIT}.${TIMESTAMP}"
@@ -126,8 +131,20 @@ BUILD_NUMBER="${GIT_COMMIT}.${TIMESTAMP}"
 fastlane import_certificates keychain:"$KEYCHAIN_PATH"
 
 # Archive and export the build.
-xcodebuild -project "$PROJECT_PATH" -scheme "Multifolder" -config Release -archivePath "$ARCHIVE_PATH"  OTHER_CODE_SIGN_FLAGS="--keychain=\"${KEYCHAIN_PATH}\"" BUILD_NUMBER=$BUILD_NUMBER MARKETING_VERSION=$VERSION_NUMBER archive | xcpretty
-xcodebuild -archivePath "$ARCHIVE_PATH" -exportArchive -exportPath "$BUILD_DIRECTORY" -exportOptionsPlist "macos/ExportOptions.plist"
+xcodebuild \
+    -project "$PROJECT_PATH" \
+    -scheme "Multifolder" \
+    -config Release \
+    -archivePath "$ARCHIVE_PATH" \
+    OTHER_CODE_SIGN_FLAGS="--keychain=\"${KEYCHAIN_PATH}\"" \
+    BUILD_NUMBER=$BUILD_NUMBER \
+    MARKETING_VERSION=$VERSION_NUMBER \
+    archive | xcpretty
+xcodebuild \
+    -archivePath "$ARCHIVE_PATH" \
+    -exportArchive \
+    -exportPath "$BUILD_DIRECTORY" \
+    -exportOptionsPlist "macos/ExportOptions.plist"
 
 APP_BASENAME="Multifolder.app"
 APP_PATH="$BUILD_DIRECTORY/$APP_BASENAME"
@@ -144,15 +161,17 @@ fi
 pushd "$BUILD_DIRECTORY"
 ZIP_BASENAME="Multifolder-${VERSION_NUMBER}.zip"
 zip -r --symlinks "$ZIP_BASENAME" "$APP_BASENAME"
-"$BUILD_TOOLS_SCRIPT" verify-notarized-zip "$ZIP_BASENAME"
+build-tools verify-notarized-zip "$ZIP_BASENAME"
 rm -r "$APP_BASENAME"
 zip -r "Artifacts.zip" "."
 popd
 
-# Attempt to create a version tag and publish a GitHub release.
-# This fails quietly if there's no release to be made.
+# Attempt to create a version tag and publish a GitHub release; fails quietly if there's no new release.
 if $RELEASE || $TRY_RELEASE ; then
-    # List the current tags just to check GitHub has them.
-    git tag
-    "$CHANGES_SCRIPT" release --skip-if-empty --push --command 'scripts/release.sh'
+    changes \
+        release \
+        --skip-if-empty \
+        --push \
+        --command "\"${CHANGES_GITHUB_RELEASE_SCRIPT}\" \"\$@\"" \
+        "${BUILD_DIRECTORY}/${ZIP_BASENAME}"
 fi
