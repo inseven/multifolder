@@ -46,7 +46,7 @@ PATH=$PATH:$BUILD_TOOLS_DIRECTORY
 # Process the command line arguments.
 POSITIONAL=()
 NOTARIZE=${NOTARIZE:-false}
-RELEASE=false
+RELEASE=${TRY_RELEASE:-false}
 while [[ $# -gt 0 ]]
 do
     key="$1"
