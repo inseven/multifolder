@@ -31,7 +31,6 @@ ROOT_DIRECTORY="${SCRIPTS_DIRECTORY}/.."
 BUILD_DIRECTORY="${ROOT_DIRECTORY}/build"
 TEMPORARY_DIRECTORY="${ROOT_DIRECTORY}/temp"
 
-PROJECT_PATH="${ROOT_DIRECTORY}/macos/Multifolder.xcodeproj"
 KEYCHAIN_PATH="${TEMPORARY_DIRECTORY}/temporary.keychain"
 ARCHIVE_PATH="${BUILD_DIRECTORY}/Multifolder.xcarchive"
 FASTLANE_ENV_PATH="${ROOT_DIRECTORY}/fastlane/.env"
@@ -76,26 +75,24 @@ if [ -f "$FASTLANE_ENV_PATH" ] ; then
     source "$FASTLANE_ENV_PATH"
 fi
 
+function xcode_project {
+    xcodebuild \
+        -project "macos/Multifolder.xcodeproj" "$@"
+}
+
 function build_scheme {
     # Disable code signing for the build server.
-    xcodebuild \
-        -project "$PROJECT_PATH" \
+    xcode_project \
         -scheme "$1" \
-        clean \
-        build \
         CODE_SIGN_IDENTITY="" \
         CODE_SIGNING_REQUIRED=NO \
-        CODE_SIGNING_ALLOWED=NO | xcpretty
+        CODE_SIGNING_ALLOWED=NO "${@:2}" | xcpretty
 }
 
 cd "$ROOT_DIRECTORY"
 
-# List the available schemes
-xcodebuild -project "$PROJECT_PATH" -list
-
-# Smoke test builds.
-
-build_scheme "Multifolder"
+# List the available schemes.
+xcode_project -list
 
 # Build the macOS archive.
 
@@ -131,15 +128,14 @@ BUILD_NUMBER="${GIT_COMMIT}.${TIMESTAMP}"
 fastlane import_certificates keychain:"$KEYCHAIN_PATH"
 
 # Archive and export the build.
-xcodebuild \
-    -project "$PROJECT_PATH" \
+xcode_project \
     -scheme "Multifolder" \
     -config Release \
     -archivePath "$ARCHIVE_PATH" \
     OTHER_CODE_SIGN_FLAGS="--keychain=\"${KEYCHAIN_PATH}\"" \
     BUILD_NUMBER=$BUILD_NUMBER \
     MARKETING_VERSION=$VERSION_NUMBER \
-    archive | xcpretty
+    clean archive | xcpretty
 xcodebuild \
     -archivePath "$ARCHIVE_PATH" \
     -exportArchive \
