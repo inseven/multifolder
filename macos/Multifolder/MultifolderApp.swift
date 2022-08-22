@@ -30,6 +30,9 @@ struct MultifolderApp: App {
             SmartFolderView(folder: file.$document)
         }
         .commands {
+//            CommandGroup(replacing: .newItem) {
+//                EmptyView()
+//            }
             CommandMenu("Special") {
                 Button("Relaunch Finder...") {
                     Finder.shared.relaunch()

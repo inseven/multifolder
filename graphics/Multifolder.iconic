@@ -1,0 +1,25 @@
+{
+  "systemImage" : "gearshape.2.fill",
+  "topColor" : {
+    "red" : 0.90742486715316772,
+    "alpha" : 1,
+    "blue" : 1,
+    "green" : 0.55673646926879883
+  },
+  "iconScale" : 0.860669798951049,
+  "id" : "A88A0120-9975-4ECE-9CDD-40DA040FFDE6",
+  "symbolColor" : {
+    "red" : 1,
+    "alpha" : 1,
+    "blue" : 1,
+    "green" : 1
+  },
+  "shadowOpacity" : 0.40000000000000002,
+  "shadowHeight" : 0.19339591072989515,
+  "bottomColor" : {
+    "red" : 0.65742486715316772,
+    "alpha" : 1,
+    "blue" : 0.81830054521560669,
+    "green" : 0.30673646926879883
+  }
+}
