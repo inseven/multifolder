@@ -1,4 +1,4 @@
-// Copyright (c) 2021 InSeven Limited
+// Copyright (c) 2021-2022 InSeven Limited
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,6 +21,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
+import Diligence
 
 @main
 struct MultifolderApp: App {
@@ -30,14 +31,22 @@ struct MultifolderApp: App {
             SmartFolderView(folder: file.$document)
         }
         .commands {
-//            CommandGroup(replacing: .newItem) {
-//                EmptyView()
-//            }
             CommandMenu("Special") {
                 Button("Relaunch Finder...") {
                     Finder.shared.relaunch()
                 }
             }
+        }
+
+        About(copyright: "Copyright © 2021-2022 InSeven Limited") {
+            Action("GitHub", url: URL(string: "https://github.com/inseven/multifolder")!)
+        } acknowledgements: {
+            Acknowledgements("Developers") {
+                Credit("Jason Morley", url: URL(string: "https://jbmorley.co.uk"))
+            }
+        } licenses: {
+            License("Diligence", author: "InSeven Limited", filename: "diligence-license")
+            License("Interact", author: "InSeven Limited", filename: "interact-license")
         }
     }
 }
