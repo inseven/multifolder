@@ -40,10 +40,12 @@ jobs:
         CERTIFICATE_REPOSITORY: ${{ secrets.CERTIFICATE_REPOSITORY }}
         CERTIFICATE_REPOSITORY_AUTHORIZATION_KEY: ${{ secrets.CERTIFICATE_REPOSITORY_AUTHORIZATION_KEY }}
         APPLE_DEVELOPER_ID: ${{ secrets.APPLE_DEVELOPER_ID }}
+        FL_NOTARIZE_ASC_PROVIDER: S4WXAUZQEV
         FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NOTARIZE: ${{ github.ref == 'refs/heads/main' }}
-        TRY_RELEASE: ${{ github.ref == 'refs/heads/main' }}
+        # TRY_RELEASE: ${{ github.ref == 'refs/heads/main' }}
+        TRY_RELEASE: true
       run: scripts/build.sh
 
     - name: Archive the binary
