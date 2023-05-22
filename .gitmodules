@@ -7,3 +7,6 @@
 [submodule "scripts/changes"]
 	path = scripts/changes
 	url = git@github.com:jbmorley/changes.git
+[submodule "diligence"]
+	path = diligence
+	url = git@github.com:inseven/diligence.git

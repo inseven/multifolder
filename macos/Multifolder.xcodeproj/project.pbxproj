@@ -18,6 +18,10 @@
 		D8ABEAC8263C42CD00B9D2B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8ABEAC7263C42CD00B9D2B9 /* Preview Assets.xcassets */; };
 		D8ABEAD4263C42CD00B9D2B9 /* MultifolderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEAD3263C42CD00B9D2B9 /* MultifolderTests.swift */; };
 		D8ABEADF263C42CD00B9D2B9 /* MultifolderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEADE263C42CD00B9D2B9 /* MultifolderUITests.swift */; };
+		D8E14AA328B4EEBD00C7C982 /* Diligence in Frameworks */ = {isa = PBXBuildFile; productRef = D8E14AA228B4EEBD00C7C982 /* Diligence */; };
+		D8E14AA628B4EF4F00C7C982 /* diligence-license in Sources */ = {isa = PBXBuildFile; fileRef = D8E14AA528B4EF4F00C7C982 /* diligence-license */; };
+		D8E14AA828B4EFA400C7C982 /* interact-license in Resources */ = {isa = PBXBuildFile; fileRef = D8E14AA728B4EFA400C7C982 /* interact-license */; };
+		D8E14AA928B4F01600C7C982 /* diligence-license in Resources */ = {isa = PBXBuildFile; fileRef = D8E14AA528B4EF4F00C7C982 /* diligence-license */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,9 @@
 		D8ABEADA263C42CD00B9D2B9 /* MultifolderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultifolderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ABEADE263C42CD00B9D2B9 /* MultifolderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultifolderUITests.swift; sourceTree = "<group>"; };
 		D8ABEAE0263C42CD00B9D2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8E14AA128B4EEAF00C7C982 /* diligence */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = diligence; path = ../diligence; sourceTree = "<group>"; };
+		D8E14AA528B4EF4F00C7C982 /* diligence-license */ = {isa = PBXFileReference; lastKnownFileType = text; path = "diligence-license"; sourceTree = "<group>"; };
+		D8E14AA728B4EFA400C7C982 /* interact-license */ = {isa = PBXFileReference; lastKnownFileType = text; path = "interact-license"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D884467C2649F9E200843013 /* Interact in Frameworks */,
+				D8E14AA328B4EEBD00C7C982 /* Diligence in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +121,7 @@
 		D8ABEAB4263C42CC00B9D2B9 = {
 			isa = PBXGroup;
 			children = (
+				D8E14AA028B4EEAF00C7C982 /* Packages */,
 				D83370D6264ADFFF008D47D2 /* Common.xcconfig */,
 				D83370D7264ADFFF008D47D2 /* Debug.xcconfig */,
 				D83370D8264ADFFF008D47D2 /* Release.xcconfig */,
@@ -138,16 +147,17 @@
 		D8ABEABF263C42CC00B9D2B9 /* Multifolder */ = {
 			isa = PBXGroup;
 			children = (
-				D89501F5264A000F00A99E64 /* Extensions */,
-				D8ABEAC6263C42CD00B9D2B9 /* Preview Content */,
-				D89501F8264A011400A99E64 /* Utilities */,
 				D8ABEACA263C42CD00B9D2B9 /* Multifolder.entitlements */,
 				D8ABEAC9263C42CD00B9D2B9 /* Info.plist */,
+				D89501FF264A38B500A99E64 /* Finder.swift */,
 				D8ABEAC0263C42CC00B9D2B9 /* MultifolderApp.swift */,
+				D89501FD264A30D700A99E64 /* SmartFolder.swift */,
 				D89501FB264A290100A99E64 /* SmartFolderView.swift */,
 				D8ABEAC4263C42CD00B9D2B9 /* Assets.xcassets */,
-				D89501FD264A30D700A99E64 /* SmartFolder.swift */,
-				D89501FF264A38B500A99E64 /* Finder.swift */,
+				D89501F5264A000F00A99E64 /* Extensions */,
+				D8E14AA428B4EEFB00C7C982 /* Licenses */,
+				D8ABEAC6263C42CD00B9D2B9 /* Preview Content */,
+				D89501F8264A011400A99E64 /* Utilities */,
 			);
 			path = Multifolder;
 			sourceTree = "<group>";
@@ -178,6 +188,23 @@
 			path = MultifolderUITests;
 			sourceTree = "<group>";
 		};
+		D8E14AA028B4EEAF00C7C982 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				D8E14AA128B4EEAF00C7C982 /* diligence */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		D8E14AA428B4EEFB00C7C982 /* Licenses */ = {
+			isa = PBXGroup;
+			children = (
+				D8E14AA528B4EF4F00C7C982 /* diligence-license */,
+				D8E14AA728B4EFA400C7C982 /* interact-license */,
+			);
+			path = Licenses;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,6 +223,7 @@
 			name = Multifolder;
 			packageProductDependencies = (
 				D884467B2649F9E200843013 /* Interact */,
+				D8E14AA228B4EEBD00C7C982 /* Diligence */,
 			);
 			productName = "Smart Folders";
 			productReference = D8ABEABD263C42CC00B9D2B9 /* Multifolder.app */;
@@ -284,8 +312,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E14AA928B4F01600C7C982 /* diligence-license in Resources */,
 				D8ABEAC8263C42CD00B9D2B9 /* Preview Assets.xcassets in Resources */,
 				D8ABEAC5263C42CD00B9D2B9 /* Assets.xcassets in Resources */,
+				D8E14AA828B4EFA400C7C982 /* interact-license in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D89501FE264A30D700A99E64 /* SmartFolder.swift in Sources */,
+				D8E14AA628B4EF4F00C7C982 /* diligence-license in Sources */,
 				D8950200264A38B500A99E64 /* Finder.swift in Sources */,
 				D89501FC264A290100A99E64 /* SmartFolderView.swift in Sources */,
 				D89501FA264A013600A99E64 /* FileDropDelegate.swift in Sources */,
@@ -403,7 +434,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -459,7 +490,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -486,7 +517,6 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = $MARKETING_VERSION;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.inseven.multifolder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -513,7 +543,6 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = $MARKETING_VERSION;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.inseven.multifolder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -651,6 +680,10 @@
 		D884467B2649F9E200843013 /* Interact */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Interact;
+		};
+		D8E14AA228B4EEBD00C7C982 /* Diligence */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Diligence;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
