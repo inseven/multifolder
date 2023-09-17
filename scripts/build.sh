@@ -164,7 +164,6 @@ echo -n "$APPLE_API_KEY_BASE64" | base64 --decode -o ~/".appstoreconnect/private
 
 # Notarize the app.
 xcrun notarytool submit "$ZIP_PATH" \
-    --key "$API_KEY_PATH" \
     --key-id "$APPLE_API_KEY_ID" \
     --issuer "$APPLE_API_KEY_ISSUER_ID" \
     --output-format json \
@@ -172,7 +171,6 @@ xcrun notarytool submit "$ZIP_PATH" \
 NOTARIZATION_ID=`cat notarization-response.json | jq -r ".id"`
 NOTARIZATION_RESPONSE=`cat notarization-response.json | jq -r ".status"`
 xcrun notarytool log \
-    --key "$API_KEY_PATH" \
     --key-id "$APPLE_API_KEY_ID" \
     --issuer "$APPLE_API_KEY_ISSUER_ID" \
     "$NOTARIZATION_ID" | tee "$BUILD_DIRECTORY/notarization-log.json"
