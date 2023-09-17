@@ -109,6 +109,9 @@ function cleanup {
     cd "$ROOT_DIRECTORY"
     build-tools delete-keychain "$KEYCHAIN_PATH"
     rm -rf "$TEMPORARY_DIRECTORY"
+
+    # Clean up any private keys.
+    rm -rf ~/.appstoreconnect/private_keys
 }
 
 trap cleanup EXIT
@@ -147,21 +150,38 @@ xcodebuild \
 APP_BASENAME="Multifolder.app"
 APP_PATH="$BUILD_DIRECTORY/$APP_BASENAME"
 
-# Show the code signing details.
-codesign -dvv "$APP_PATH"
-
-# Notarize the release build.
-# https://github.com/fastlane/fastlane/issues/19686#issuecomment-1026403378
-FL_NOTARIZE_ASC_PROVIDER="S4WXAUZQEV" fastlane notarize_release package:"$APP_PATH"
-
 # Archive the results.
 pushd "$BUILD_DIRECTORY"
 ZIP_BASENAME="Multifolder-${VERSION_NUMBER}.zip"
+ZIP_PATH="$BUILD_DIRECTORY/ZIP_BASENAME"
 zip -r --symlinks "$ZIP_BASENAME" "$APP_BASENAME"
 build-tools verify-notarized-zip "$ZIP_BASENAME"
 rm -r "$APP_BASENAME"
 zip -r "Artifacts.zip" "."
 popd
+
+# Install the private key.
+mkdir -p ~/.appstoreconnect/private_keys/
+echo -n "$APPLE_API_KEY_BASE64" | base64 --decode -o ~/".appstoreconnect/private_keys/AuthKey_${APPLE_API_KEY_ID}.p8"
+
+# Notarize the app.
+xcrun notarytool submit "$ZIP_PATH" \
+    --key "$API_KEY_PATH" \
+    --key-id "$APPLE_API_KEY_ID" \
+    --issuer "$APPLE_API_KEY_ISSUER_ID" \
+    --output-format json \
+    --wait | tee notarization-response.json
+NOTARIZATION_ID=`cat notarization-response.json | jq -r ".id"`
+NOTARIZATION_RESPONSE=`cat notarization-response.json | jq -r ".status"`
+xcrun notarytool log \
+    --key "$API_KEY_PATH" \
+    --key-id "$APPLE_API_KEY_ID" \
+    --issuer "$APPLE_API_KEY_ISSUER_ID" \
+    "$NOTARIZATION_ID" | tee "$BUILD_DIRECTORY/notarization-log.json"
+if [ "$NOTARIZATION_RESPONSE" != "Accepted" ] ; then
+    echo "Failed to notarize app."
+    exit 1
+fi
 
 # Attempt to create a version tag and publish a GitHub release; fails quietly if there's no new release.
 if $RELEASE ; then
