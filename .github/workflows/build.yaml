@@ -43,8 +43,7 @@ jobs:
         APPLE_API_KEY_ISSUER_ID: ${{ secrets.APPLE_API_KEY_ISSUER_ID }}
         APPLE_DEVELOPER_ID: ${{ secrets.APPLE_DEVELOPER_ID }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NOTARIZE: ${{ github.ref == 'refs/heads/main' }}
-        TRY_RELEASE: ${{ github.ref == 'refs/heads/main' }}
+        RELEASE: ${{ github.ref == 'refs/heads/main' }}
       run: scripts/build.sh
 
     - name: Archive the binary

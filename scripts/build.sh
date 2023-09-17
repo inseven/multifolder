@@ -45,16 +45,11 @@ PATH=$PATH:$BUILD_TOOLS_DIRECTORY
 
 # Process the command line arguments.
 POSITIONAL=()
-NOTARIZE=${NOTARIZE:-false}
-RELEASE=${TRY_RELEASE:-false}
+RELEASE=${RELEASE:-false}
 while [[ $# -gt 0 ]]
 do
     key="$1"
     case $key in
-        -n|--notarize)
-        NOTARIZE=true
-        shift
-        ;;
         -r|--release)
         RELEASE=true
         shift
@@ -156,10 +151,8 @@ APP_PATH="$BUILD_DIRECTORY/$APP_BASENAME"
 codesign -dvv "$APP_PATH"
 
 # Notarize the release build.
-if $NOTARIZE ; then
-    # https://github.com/fastlane/fastlane/issues/19686#issuecomment-1026403378
-    FL_NOTARIZE_ASC_PROVIDER="S4WXAUZQEV" fastlane notarize_release package:"$APP_PATH"
-fi
+# https://github.com/fastlane/fastlane/issues/19686#issuecomment-1026403378
+FL_NOTARIZE_ASC_PROVIDER="S4WXAUZQEV" fastlane notarize_release package:"$APP_PATH"
 
 # Archive the results.
 pushd "$BUILD_DIRECTORY"
