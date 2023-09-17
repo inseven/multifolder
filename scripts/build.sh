@@ -125,7 +125,14 @@ TIMESTAMP=`date +%s`
 BUILD_NUMBER="${GIT_COMMIT}.${TIMESTAMP}"
 
 # Import the certificates into our dedicated keychain.
-fastlane import_certificates keychain:"$KEYCHAIN_PATH"
+if [ -z ${DEVELOPER_ID_APPLICATION_CERTIFICATE_PASSWORD+x} ] ; then
+    echo "Skipping certificate import..."
+else
+    echo "$DEVELOPER_ID_APPLICATION_CERTIFICATE_PASSWORD" | build-tools import-base64-certificate \
+        --password \
+        "$KEYCHAIN_PATH" \
+        "$DEVELOPER_ID_APPLICATION_CERTIFICATE_BASE64"
+fi
 
 # Archive and export the build.
 xcode_project \
