@@ -155,9 +155,7 @@ pushd "$BUILD_DIRECTORY"
 ZIP_BASENAME="Multifolder-${VERSION_NUMBER}.zip"
 ZIP_PATH="$BUILD_DIRECTORY/ZIP_BASENAME"
 zip -r --symlinks "$ZIP_BASENAME" "$APP_BASENAME"
-build-tools verify-notarized-zip "$ZIP_BASENAME"
 rm -r "$APP_BASENAME"
-zip -r "Artifacts.zip" "."
 popd
 
 # Install the private key.

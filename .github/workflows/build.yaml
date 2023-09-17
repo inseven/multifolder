@@ -46,8 +46,8 @@ jobs:
         RELEASE: ${{ github.ref == 'refs/heads/main' }}
       run: scripts/build.sh
 
-    - name: Archive the binary
+    - name: Archive the build directory
       uses: actions/upload-artifact@v3
       with:
-        name: Artifacts
-        path: build/Artifacts.zip
+        path: build
+        if-no-files-found: error
