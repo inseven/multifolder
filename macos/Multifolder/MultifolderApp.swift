@@ -22,11 +22,13 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 import Diligence
+import Interact
 
 @main
 struct MultifolderApp: App {
 
     var body: some Scene {
+
         DocumentGroup(newDocument: SmartFolder()) { file in
             SmartFolderView(folder: file.document)
         }
@@ -45,7 +47,8 @@ struct MultifolderApp: App {
                 Credit("Jason Morley", url: URL(string: "https://jbmorley.co.uk"))
             }
         } licenses: {
-            License("Interact", author: "InSeven Limited", filename: "interact-license")
+            License(Interact.Package.name, author: Interact.Package.author, url: Interact.Package.licenseURL)
         }
     }
+
 }
