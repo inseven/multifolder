@@ -45,7 +45,6 @@ struct MultifolderApp: App {
                 Credit("Jason Morley", url: URL(string: "https://jbmorley.co.uk"))
             }
         } licenses: {
-            License("Diligence", author: "InSeven Limited", filename: "diligence-license")
             License("Interact", author: "InSeven Limited", filename: "interact-license")
         }
     }
