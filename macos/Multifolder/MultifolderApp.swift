@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023 InSeven Limited
+// Copyright (c) 2021-2024 Jason Morley
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -38,9 +38,8 @@ struct MultifolderApp: App {
             }
         }
 
-        About(repository: "inseven/multifolder", copyright: "Copyright © 2021-2023 InSeven Limited") {
+        About(repository: "inseven/multifolder", copyright: "Copyright © 2021-2024 Jason Morley") {
             Action("GitHub", url: URL(string: "https://github.com/inseven/multifolder")!)
-            Action("InSeven Limited", url: URL(string: "https://inseven.co.uk")!)
         } acknowledgements: {
             Acknowledgements("Developers") {
                 Credit("Jason Morley", url: URL(string: "https://jbmorley.co.uk"))
