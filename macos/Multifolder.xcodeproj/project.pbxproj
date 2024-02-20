@@ -19,9 +19,7 @@
 		D8ABEAD4263C42CD00B9D2B9 /* MultifolderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEAD3263C42CD00B9D2B9 /* MultifolderTests.swift */; };
 		D8ABEADF263C42CD00B9D2B9 /* MultifolderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABEADE263C42CD00B9D2B9 /* MultifolderUITests.swift */; };
 		D8E14AA328B4EEBD00C7C982 /* Diligence in Frameworks */ = {isa = PBXBuildFile; productRef = D8E14AA228B4EEBD00C7C982 /* Diligence */; };
-		D8E14AA628B4EF4F00C7C982 /* diligence-license in Sources */ = {isa = PBXBuildFile; fileRef = D8E14AA528B4EF4F00C7C982 /* diligence-license */; };
 		D8E14AA828B4EFA400C7C982 /* interact-license in Resources */ = {isa = PBXBuildFile; fileRef = D8E14AA728B4EFA400C7C982 /* interact-license */; };
-		D8E14AA928B4F01600C7C982 /* diligence-license in Resources */ = {isa = PBXBuildFile; fileRef = D8E14AA528B4EF4F00C7C982 /* diligence-license */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +62,6 @@
 		D8ABEADE263C42CD00B9D2B9 /* MultifolderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultifolderUITests.swift; sourceTree = "<group>"; };
 		D8ABEAE0263C42CD00B9D2B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8E14AA128B4EEAF00C7C982 /* diligence */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = diligence; path = ../diligence; sourceTree = "<group>"; };
-		D8E14AA528B4EF4F00C7C982 /* diligence-license */ = {isa = PBXFileReference; lastKnownFileType = text; path = "diligence-license"; sourceTree = "<group>"; };
 		D8E14AA728B4EFA400C7C982 /* interact-license */ = {isa = PBXFileReference; lastKnownFileType = text; path = "interact-license"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,7 +196,6 @@
 		D8E14AA428B4EEFB00C7C982 /* Licenses */ = {
 			isa = PBXGroup;
 			children = (
-				D8E14AA528B4EF4F00C7C982 /* diligence-license */,
 				D8E14AA728B4EFA400C7C982 /* interact-license */,
 			);
 			path = Licenses;
@@ -313,7 +309,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8E14AA928B4F01600C7C982 /* diligence-license in Resources */,
 				D8ABEAC8263C42CD00B9D2B9 /* Preview Assets.xcassets in Resources */,
 				D8ABEAC5263C42CD00B9D2B9 /* Assets.xcassets in Resources */,
 				D8E14AA828B4EFA400C7C982 /* interact-license in Resources */,
@@ -342,7 +337,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D89501FE264A30D700A99E64 /* SmartFolder.swift in Sources */,
-				D8E14AA628B4EF4F00C7C982 /* diligence-license in Sources */,
 				D8950200264A38B500A99E64 /* Finder.swift in Sources */,
 				D89501FC264A290100A99E64 /* SmartFolderView.swift in Sources */,
 				D89501FA264A013600A99E64 /* FileDropDelegate.swift in Sources */,
