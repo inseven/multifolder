@@ -132,6 +132,8 @@ else
         "$DEVELOPER_ID_APPLICATION_CERTIFICATE_BASE64"
 fi
 
+build-tools install-provisioning-profile "macos/Multifolder_Developer_ID_Profile.provisionprofile"
+
 # Archive and export the build.
 xcode_project \
     -scheme "Multifolder" \
