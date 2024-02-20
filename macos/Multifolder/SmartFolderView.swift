@@ -25,7 +25,7 @@ import Interact
 
 struct SmartFolderView: View {
 
-    @Binding var folder: SmartFolder
+    @ObservedObject var folder: SmartFolder
 
     @State var selection: Set<URL> = Set()
 

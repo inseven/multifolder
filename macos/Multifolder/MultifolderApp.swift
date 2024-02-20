@@ -28,7 +28,7 @@ struct MultifolderApp: App {
 
     var body: some Scene {
         DocumentGroup(newDocument: SmartFolder()) { file in
-            SmartFolderView(folder: file.$document)
+            SmartFolderView(folder: file.document)
         }
         .commands {
             CommandMenu("Special") {
